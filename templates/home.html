@@ -5,48 +5,45 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 <style>
   .mainContainer{
     max-width:920px;
     margin: 0 auto;
   }
-  h1{
+  /* h1{
     font-size:50px;
     color: rgb(50,50,50);
     font-family: Roboto;
     font-weight: normal;
     text-align: center;
-  }
+  } */
   #banner{
     width:100%;
     height:360px;
     object-fit:cover;
-    object-position: center;
+   
   }
-  h2,h3{
+  /* h2,h3{
     font-size:32px;
     color: rgb(100,100,100);
     font-family: Roboto;
     font-weight: normal;
     text-align: center;
-  }
-  p{
+  } */
+  /* p{
     font-size:auto;
     color: rgb(100,100,100);
     font-family: Roboto;
     font-weight: normal;
     text-align: center;
-  }
-  ul{
+  } */
+  ul,li{
     list-style: none;
   }
-  .jobCard{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;;
-    padding: 0px 10px;
-  }
+
   #contact{
     display: flex;
     flex-direction: row;
@@ -63,12 +60,12 @@
   
 </head>
 <body>
-  <div class="mainContainer">
-     <div> <h1>job Portal</h1>  </div>  
-     <div > <img id='banner' src="https://c3f70db9-45c9-434d-8c0f-a8043d15d1e6-00-2vr1mmpjzuj2r.sisko.replit.dev/static/banner.jfif" alt="Photo" > </img> </div>  
+  <div class="container">
+     <div> <h1 class='text-center mt-2 mb-4'>job Portal</h1>  </div>  
+     <div > <img class='img-fluid' id='banner' src="https://c3f70db9-45c9-434d-8c0f-a8043d15d1e6-00-2vr1mmpjzuj2r.sisko.replit.dev/static/banner.jfif" alt="Photo" > </img> </div>  
      <div> 
-       <h2>About Us</h2>
-       <p>
+       <h2 class="text-center" >About Us</h2>
+       <p class="field">
          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus corporis sit laboriosam corrupti dolore cupiditate illo nam numquam cum. Iste tenetur consectetur consequatur officia libero at eius illo veniam aut?
          Ea velit quibusdam perferendis? Magni eaque quae nihil dolore quam placeat vero facilis voluptatum mollitia sunt dolores, nostrum non error sequi. Alias labore sed necessitatibus quae eaque fuga perferendis! Rerum.
          Velit facilis reprehenderit porro pariatur quasi repudiandae? Cum quibusdam cupiditate fugiat repudiandae saepe commodi aspernatur ipsum autem odit dolore accusamus modi possimus libero, earum quasi labore vitae nihil. Molestias, consequuntur!
@@ -83,22 +80,19 @@
        </p> 
      </div>  
     <div>
-       <h3>Availables Job </h3>
+       <h2 class="text-center mt-4 mb-4" >Jobs Openings </h2>
      </div>
-     <div class='jobCard'>
-         <ul>
-          <li>job title</li>
-          <li>Job location</li>
-         
-         </ul> 
-         <button> Apply Now </button>
-     </div> 
+    <div>
+         {% for job in jobs %}
+           {% include "jobitem.html" %}
+         {% endfor %}
+      </div>
 
 
 
     <footer>
         <div>
-          <h3>Contact Us</h3>
+          <h3 class="text-center mt-4" >Contact Us</h3>
          <ul id="contact">
           <li><b> Email </b>: contact@jobportal.com</li>
           <li> <b>Phone </b> : +123 456 7890</li>          
@@ -109,5 +103,8 @@
         </div>
     </footer>
     </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
