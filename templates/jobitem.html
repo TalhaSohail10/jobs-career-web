@@ -11,7 +11,53 @@
    </li>
       </div>
     <div class="col-md-3 container text-end" >
-     <button class="btn btn-outline-primary">Apply</button>
+     <!-- <a href="mailto:piotr@mailtrap.io
+       ?subject=Hello there!
+       &body=Dear HR, Hello for emai  "       
+       class="btn btn-outline-primary">Apply</a> -->
+      <button class="btn btn-outline-primary " type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">Apply</button>
+
+      <div class="offcanvas offcanvas-bottom cotainer-fluid px-2 mx-4" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel"
+        style="height: 60%;width :100%;">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasBottomLabel">Application Form</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body text-start">
+           <li >
+             <!-- Here Data Stick on first Job   -->
+             <h5 style="color:rgb(100,100,100)"><B> {{job.title}} </B></h5>
+              <h6 style="color:rgb(100,100,100)"> {{job.company}} </h6>
+             <p style="color:rgb(150,150,150)"> {{job.location}} </p>
+             <p style="color:rgb(150,150,150)"> {{job.salary_from}} </p>   
+             <p style="color:rgb(150,150,150)"> {{job.employment_type}}</p>    
+             <p style="color:rgb(150,150,150)"> {{job.id}}</p>  
+ 
+
+           </li>
+          <li>
+            <h5>Description :</h5>
+            <p>
+              lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea comm
+            </p>
+            </li>
+          <li>
+            <h5>Application :</h5>
+            <form class="container" enctype="multipart/form-data">
+              <div class="mb-3 ">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control py-2" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="file-upload" class="pt-3">Upload Resume :</label>
+                <input type="file" class="pt-3" id="pdfUpload" name="pdfFile" accept="image/*">
+              </div>
+              
+              
+              <button type="submit" class="btn btn-outline-secondary">Submit</button>
+            </form>
+          </li>
+        </div>
+      </div>
+
     </div>
   </div>
    </div>
